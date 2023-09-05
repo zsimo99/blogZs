@@ -9,11 +9,13 @@ import { v4 as v4uuid } from 'uuid'
 const page = async ({ params }) => {
 
     const { id } = params
-    const { post } = await getPost(id)
-    if (!post) return notFound()
+    // const { post } = await getPost(id)
+    // if (!post) return notFound()
+
     return (
         <div className='py-20'>
-            <h1 className='text-3xl text-purple-800 font-semibold mb-10'>{post.title}</h1>
+            <h1>hello</h1>
+            {/* <h1 className='text-3xl text-purple-800 font-semibold mb-10'>{post.title}</h1>
             <div className='bg-[#FAFAFA] dark:bg-[#1F1F1F] p-4 rounded-lg' dangerouslySetInnerHTML={{ __html: post.detail }}></div>
             <div className='mt-8'>
                 <h2>Tags:</h2>
@@ -49,14 +51,14 @@ const page = async ({ params }) => {
                 <div>
                     <CreateComment postId={id} />
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
 
-async function getPost(id) {
-    const res = await fetch(`${process.env.NEXTAUTH_URL}api/posts/${id}`, { cache: "no-cache" })
-    return await res.json()
-}
+// async function getPost(id) {
+//     const res = await fetch(`${process.env.NEXTAUTH_URL}api/posts/${id}`, { cache: "no-cache" })
+//     return await res.json()
+// }
 
 export default page

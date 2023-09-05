@@ -43,40 +43,43 @@ import React from 'react'
 const page = async ({ searchParams }) => {
     const search = searchParams.search
     const page = searchParams.page
-    const { posts, length } = await getPosts(search, page)
+    // const { posts, length } = await getPosts(search, page)
+    const posts = []
+    length = 0
     return (
         <>
-            <div className='mt-4 mb-8 lg:my-8'>
+            <h1>hello</h1>
+            {/* <div className='mt-4 mb-8 lg:my-8'>
                 <Search />
             </div>
             <div className='flex flex-col gap-8 mb-8'>
                 <Posts length={length} posts={posts} />
-            </div>
+            </div> */}
         </>
     )
 }
 
-async function getPosts(search, page) {
-    let url = `${process.env.NEXTAUTH_URL}api/posts`;
+// async function getPosts(search, page) {
+//     let url = `${process.env.NEXTAUTH_URL}api/posts`;
 
-    // Add search parameter if it's not null or empty
-    if (search) {
-        url += `?search=${encodeURIComponent(search)}`;
-    }
+//     // Add search parameter if it's not null or empty
+//     if (search) {
+//         url += `?search=${encodeURIComponent(search)}`;
+//     }
 
-    // Add page parameter if it's not null or empty
-    if (page) {
-        // Check if there's already a search parameter
-        if (search) {
-            url += `&page=${encodeURIComponent(page)}`;
-        } else {
-            url += `?page=${encodeURIComponent(page)}`;
-        }
-    }
-    const res = await fetch(url, { cache: "no-cache" })
-    const data = await res.json()
-    return data
-}
+//     // Add page parameter if it's not null or empty
+//     if (page) {
+//         // Check if there's already a search parameter
+//         if (search) {
+//             url += `&page=${encodeURIComponent(page)}`;
+//         } else {
+//             url += `?page=${encodeURIComponent(page)}`;
+//         }
+//     }
+//     const res = await fetch(url, { cache: "no-cache" })
+//     const data = await res.json()
+//     return data
+// }
 
 
 
