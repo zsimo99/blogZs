@@ -80,17 +80,16 @@ const PostSettings = ({ creator, detail, postId }) => {
                     <li onClick={handleDelete} className='px-10 py-2 text-sm text text-red-600 cursor-pointer'>Delete</li>
                     <li onClick={() => setForget(true)} className='px-10 py-2 text-sm text text-green-400 cursor-pointer'>Update</li>
                 </>}
-                {
-                    showForget &&
-                    <div ref={forget} className='fixed w-screen h-screen top-0 left-0 z-[100] bg-[#00000060] grid place-items-center'>
-                        <div className='bg-white dark:bg-[#222] p-20'>
-                            :( sorry forget to add this task
-                            <p className='text-sm text-gray-500'>Click anywher to go back</p>
-                        </div>
-                    </div>
-                }
-
             </ul>
+            {
+                showForget &&
+                <div ref={forget} className='fixed w-screen h-screen top-0 left-0 z-[100] bg-[#00000060] grid place-items-center'>
+                    <div className='bg-white dark:bg-[#222] p-20'>
+                        :( sorry forget to add this task
+                        <p className='text-sm text-gray-500'>Click anywher to go back</p>
+                    </div>
+                </div>
+            }
         </div>
     )
 }

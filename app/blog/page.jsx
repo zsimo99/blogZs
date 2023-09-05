@@ -57,7 +57,7 @@ const page = async ({ searchParams }) => {
 }
 
 async function getPosts(search, page) {
-    let url = 'http://localhost:3000/api/posts';
+    let url = `${process.env.NEXTAUTH_URL}api/posts`;
 
     // Add search parameter if it's not null or empty
     if (search) {
